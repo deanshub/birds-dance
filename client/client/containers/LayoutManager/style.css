@@ -1,0 +1,27 @@
+.content {
+  flex: 1;
+  display: flex;
+}
+
+.leftVertical{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.upperHorizontal{
+  flex: 1;
+}
+
+.resizable{
+  display: inline-block;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.birdDetails{
+  border-top: 5px solid #3e3e3f;
+}
+.cageDetails{
+  border-left: 5px solid #3e3e3f;
+}

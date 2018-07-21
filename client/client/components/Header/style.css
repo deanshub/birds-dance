@@ -1,0 +1,10 @@
+.header {
+  height: 2.5em;
+  /* max-height: 10vh; */
+  display: flex;
+  align-items: center;
+  background-color: #3e3e3f;
+  color: white;
+  font-size: 2em;
+  padding: 0.5em 1em;
+}
