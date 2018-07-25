@@ -8,7 +8,7 @@ export default class Cage extends Component {
   render() {
     const { cage, isClosed } = this.props
 
-    if (isClosed) {
+    if (isClosed || !cage) {
       return <div className={classnames(style.closedView)}>There is no chosen cage</div>
     }
 

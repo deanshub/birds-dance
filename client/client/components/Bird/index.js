@@ -9,24 +9,28 @@ export default class Bird extends Component {
   render() {
     const { bird, isClosed } = this.props
 
-    if (isClosed) {
+    if (isClosed || !bird) {
       return <div className={classnames(style.closedView)}>There is no chosen bird</div>
     }
 
     const { fatherId, motherId } = bird.parents || {}
     const prettyDate = moment(bird.dateOfBirth).format('MM/DD/YYYY')
-    const age = moment(bird.dateOfBirth).toNow(true);
+    const age = moment(bird.dateOfBirth).toNow(true)
 
     return (
-      <ul>
-        <li><b>Name: </b>{bird.name}</li>
-        <li><b>DoB: </b>{prettyDate} <b>Age:</b>({age})</li>
-        <li><b>Gender: </b>{bird.gender}</li>
-        <li><b>Species: </b>{bird.species}</li>
-        <li><b>Owner: </b>{bird.owner}</li>
-        <li><b>Cage: </b>{bird.cage}</li>
-        <li><b>Parents: </b>{fatherId} {motherId}</li>
-      </ul>
+      <div className={classnames(style.birdGrid)}>
+        <ul>
+          <li><b>Name: </b>{bird.name}</li>
+          <li><b>DoB: </b>{prettyDate} ({age})</li>
+          <li><b>Gender: </b>{bird.gender}</li>
+          <li><b>Species: </b>{bird.species}</li>
+          <li><b>Owner: </b>{bird.owner}</li>
+          <li><b>Cage: </b>{bird.cage}</li>
+          <li><b>Parents: </b>{fatherId} {motherId}</li>
+        </ul>
+        <div className={classnames(style.childrenView)} />
+        <div className={classnames(style.notesView)}>{bird.notes}</div>
+      </div>
     )
   }
 }
