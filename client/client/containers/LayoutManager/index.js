@@ -3,10 +3,28 @@ import Resizable from 're-resizable'
 import classnames from 'classnames'
 import style from './style.css'
 
+import Bird from '../../components/Bird'
+
 const DEFAULT_HEIGHT = '300px'
 const DEFAULT_WIDTH = '500px'
 const MIN_HEIGHT = 20
 const MIN_WIDTH = 20
+
+const mockBird = {
+  id: 'id',
+  name: 'myName',
+  dateOfBirth: 1532232000000,
+  gender: 'F',
+  species: 'Zebra',
+  owner: 'Mor',
+  cage: 'M',
+  parents: {
+    fatherId: '123',
+    motherId: '456',
+  },
+  children: [],
+  notes: 'myNotes',
+}
 
 export default class LayoutManager extends Component {
   constructor(props) {
@@ -68,7 +86,7 @@ export default class LayoutManager extends Component {
               onResizeStop={(e, direction, ref)=>this.onResize({height: ref.style.height})}
               size={{height}}
           >
-            Bird Details
+            <Bird bird={mockBird} />
           </Resizable>
         </div>
         <Resizable
