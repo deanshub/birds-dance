@@ -3,15 +3,17 @@ import Resizable from 're-resizable'
 import classnames from 'classnames'
 import style from './style.css'
 
-const defaultHeight = '300px'
-const defaultWidth = '500px'
+const DEFAULT_HEIGHT = '300px'
+const DEFAULT_WIDTH = '500px'
+const MIN_HEIGHT = 20
+const MIN_WIDTH = 20
 
 export default class LayoutManager extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      height: defaultHeight,
-      width: defaultWidth,
+      height: DEFAULT_HEIGHT,
+      width: DEFAULT_WIDTH,
     }
   }
 
@@ -21,20 +23,20 @@ export default class LayoutManager extends Component {
     let height = size.height
     if (size.width!==undefined) {
       if (size.width===this.state.width){
-        if (parseFloat(size.width)<=20) {
-          width = defaultWidth
+        if (parseFloat(size.width) <= MIN_WIDTH) {
+          width = DEFAULT_WIDTH
         } else {
-          width = '20px'
+          width = `${MIN_WIDTH}px`
         }
       }
       newSize.width = width
     }
     if (size.height!==undefined) {
       if (size.height===this.state.height) {
-        if (parseFloat(size.height)<=20) {
-          height = defaultHeight
+        if (parseFloat(size.height) <= MIN_HEIGHT) {
+          height = DEFAULT_HEIGHT
         } else {
-          height = '20px'
+          height = `${MIN_HEIGHT}px`
         }
       }
       newSize.height = height
