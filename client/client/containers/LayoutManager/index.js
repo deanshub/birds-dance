@@ -26,6 +26,10 @@ const mockBird = {
   notes: 'myNotes',
 }
 
+const isBirdPanelClosed = height => {
+  return `${MIN_HEIGHT}px` === height
+}
+
 export default class LayoutManager extends Component {
   constructor(props) {
     super(props)
@@ -64,6 +68,7 @@ export default class LayoutManager extends Component {
 
   render() {
     const {width, height} = this.state
+
     return (
       <div className={classnames(style.content)}>
         <div className={classnames(style.leftVertical)}>
@@ -86,7 +91,7 @@ export default class LayoutManager extends Component {
               onResizeStop={(e, direction, ref)=>this.onResize({height: ref.style.height})}
               size={{height}}
           >
-            <Bird bird={mockBird} />
+            <Bird bird={mockBird} isClosed={isBirdPanelClosed(height)} />
           </Resizable>
         </div>
         <Resizable

@@ -1,12 +1,20 @@
+import classnames from 'classnames';
 import moment from 'moment';
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
+import style from './style.css'
+
 export default class Bird extends Component {
   render() {
-    const { bird } = this.props
+    const { bird, isClosed } = this.props
+
+    if (isClosed) {
+      return <div className={classnames(style.closedView)}>There is no chosen bird</div>
+    }
+
     const { fatherId, motherId } = bird.parents || {}
-    const prettyDate = moment(bird.dateOfBirth).format('MM/DD/YYYY');
+    const prettyDate = moment(bird.dateOfBirth).format('MM/DD/YYYY')
     const age = moment(bird.dateOfBirth).toNow(true);
 
     return (
@@ -39,5 +47,6 @@ Bird.propTypes = {
     children: PropTypes.arrayOf(PropTypes.string),
     notes: PropTypes.string,
   }),
+  isClosed: PropTypes.bool
 }
 
