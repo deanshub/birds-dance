@@ -1,6 +1,5 @@
 .header {
-  height: 2.5em;
-  /* max-height: 10vh; */
+  height: 1.5em;
   display: flex;
   align-items: center;
   background-color: #3e3e3f;

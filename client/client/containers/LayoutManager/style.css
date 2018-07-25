@@ -1,3 +1,7 @@
+:root {
+    --main-border-color: #3e3e3f;
+}
+
 .content {
   flex: 1;
   display: flex;
@@ -20,8 +24,8 @@
 }
 
 .birdDetails{
-  border-top: 5px solid #3e3e3f;
+  border-top: 5px solid var(--main-border-color);
 }
 .cageDetails{
-  border-left: 5px solid #3e3e3f;
+  border-left: 5px solid var(--main-border-color);
 }
