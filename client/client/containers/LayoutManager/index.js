@@ -4,6 +4,7 @@ import classnames from 'classnames'
 import style from './style.css'
 
 import Bird from '../../components/Bird'
+import Cage from '../../components/Cage'
 
 const DEFAULT_HEIGHT = '300px'
 const DEFAULT_WIDTH = '500px'
@@ -26,8 +27,19 @@ const mockBird = {
   notes: 'myNotes',
 }
 
+const mockCage = {
+  id: 'id',
+  babies: [],
+  fledged: [],
+  notes: 'myNotes',
+}
+
 const isBirdPanelClosed = height => {
   return `${MIN_HEIGHT}px` === height
+}
+
+const isCagePanelClosed = width => {
+  return `${MIN_WIDTH}px` === width
 }
 
 export default class LayoutManager extends Component {
@@ -110,7 +122,7 @@ export default class LayoutManager extends Component {
             onResizeStop={(e, direction, ref)=>this.onResize({width: ref.style.width})}
             size={{width}}
         >
-          Cage Details
+          <Cage cage={mockCage} isClosed={isCagePanelClosed(width)} />
         </Resizable>
       </div>
     )
