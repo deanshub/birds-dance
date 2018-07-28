@@ -29,7 +29,7 @@ const mockBird = {
 
 const mockCage = {
   id: 'id',
-  babies: [],
+  babies: [{ dateOfBirth: 1532232000000 }, { dateOfBirth: 1532232000000 }, { dateOfBirth: 1542232000000 }],
   fledged: [],
   notes: 'myNotes',
 }
