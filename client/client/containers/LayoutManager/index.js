@@ -5,6 +5,7 @@ import style from './style.css'
 
 import Bird from '../../components/Bird'
 import Cage from '../../components/Cage'
+import AddClutch from '../AddClutch'
 
 const DEFAULT_HEIGHT = '300px'
 const DEFAULT_WIDTH = '500px'
@@ -86,6 +87,7 @@ export default class LayoutManager extends Component {
         <div className={classnames(style.leftVertical)}>
           <div className={classnames(style.upperHorizontal)}>
             Cages Manager
+            <AddClutch />
           </div>
           <Resizable
               axis="y"

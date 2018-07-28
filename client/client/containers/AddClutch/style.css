@@ -1,0 +1,67 @@
+.AddClutchModal {
+    min-width: 300px;
+}
+
+.CloseButton {
+    cursor: pointer;
+}
+
+.Header {
+    margin-top: 0;
+}
+
+.FormGroup {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.FormControl {
+    margin-left: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    border: 1px solid #d7d7e9;
+    display: inline-block;
+    vertical-align: middle;
+    flex: 1 1 70px;
+}
+
+.BirdsNumber {
+    height: 17px;
+}
+
+.Calendar > div {
+    border: 0;
+}
+
+.Calendar button {
+    padding: 1px 2px;
+}
+
+.Calendar input {
+    font-size: 12px;
+    min-width: 0;
+    text-align: center;
+    padding: 0;
+
+    height: inherit;
+    vertical-align: middle;
+}
+
+.Calendar button svg {
+    width: 12px;
+}
+
+.AddButton {
+    padding: 5px 10px;
+    background: #155de1;
+    border: 1px solid #CCC;
+    color: white;
+    border-radius: 3px;
+    float: right;
+    cursor: pointer;
+}
+
+.AddButton:hover {
+    background: #1d4794;
+}
