@@ -5,7 +5,7 @@ import Modal from 'react-responsive-modal'
 
 import Styles from './style.css'
 
-export default class App extends Component {
+export default class AddClutch extends Component {
   constructor(props) {
     super(props)
 
