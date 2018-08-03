@@ -44,12 +44,12 @@ export default class AddClutch extends Component {
   }
 
   render() {
-    const { open } = this.state
+    const { open, birds } = this.state
     return (
       <div>
         <button onClick={this.onOpenModal}>Open modal</button>
         <Modal
-            classNames={{ modal: classnames(Styles.AddClutchModal) }}
+            classNames={{ modal: classnames(Styles.AddClutchModal), closeButton: classnames(Styles.CloseButton) }}
             onClose={this.onCloseModal}
             open={open}
         >
@@ -66,12 +66,18 @@ export default class AddClutch extends Component {
             <label># Birds: </label>
             <input
                 className={classnames(Styles.FormControl, Styles.BirdsNumber)}
+                min={0}
                 onChange={this.handleBirdsChange}
                 type="number"
-                value={this.state.birds}
+                value={birds}
             />
           </div>
-          ּ<button className={classnames(Styles.AddButton)} onClick={this.handleAddClick}>Add</button>
+          <button
+                className={classnames(Styles.AddButton)}
+                disabled={!birds}
+                onClick={this.handleAddClick}
+            >Add
+          </button>
         </Modal>
       </div>
     )

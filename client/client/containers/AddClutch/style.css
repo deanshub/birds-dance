@@ -1,9 +1,16 @@
 .AddClutchModal {
     min-width: 300px;
+    padding: 30px;
 }
 
 .CloseButton {
     cursor: pointer;
+    width: 15px;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    height: 15px;
+    fill: gray;
 }
 
 .Header {
@@ -64,4 +71,8 @@
 
 .AddButton:hover {
     background: #1d4794;
+}
+
+.AddButton:disabled {
+    background: #DDDDDD;
 }
