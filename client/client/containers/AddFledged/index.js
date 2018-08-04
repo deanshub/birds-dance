@@ -11,6 +11,7 @@ export default class AddFledged extends Component {
     this.state = {
       open: false,
       birds: 0,
+      cageId: null,
     }
 
     this.onOpenModal = this.onOpenModal.bind(this)
@@ -19,12 +20,12 @@ export default class AddFledged extends Component {
     this.handleAddClick = this.handleAddClick.bind(this)
   }
 
-  onOpenModal() {
-    this.setState({ open: true, birds: 0 })
+  onOpenModal(cageId) {
+    this.setState({ open: true, birds: 0, cageId })
   }
 
   onCloseModal() {
-    this.setState({ open: false })
+    this.setState({ open: false, cageId: null });
   }
 
   handleBirdsChange(e) {
