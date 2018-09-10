@@ -13,3 +13,5 @@ install dependencies using yarn
 ## Run
 
 ```yarn start```
+
+## Have fun
